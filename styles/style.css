@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --selectedSeats: rgb(109, 179, 107);
+  --gray: #424242;
+  --white: #ffffff;
+  --dark: #0e1129;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark);
+  color: var(--white);
+  /* This next 5 lines are not mandatory in every project but this keeps the lines in center of the screen. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;  
+}
+
+/* 1st div */
+.movie-container{
+  margin: 20px 0;
+}
+
+.movie-container label{
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+select{
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  -moz-appearance: none; /* replacing some styles we have to write for other files also */
+  -webkit-appearance: none;/* By these two the arrow will be removed in select.*/
+  appearance: none;
+}
+
+/* 2nd div */
+.showcase{
+  background-color: #090b1b;
+  display:flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color:var(--white);
+  list-style: none;
+}
+
+.showcase li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  padding: 5px;
+}
+
+.showcase li small{
+  margin-left: 2px;
+}
+
+.seat{
+  background-color: var(--gray) ;
+  height: 1.2rem;
+  width: 1.3rem;
+  margin: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.seat.selected{
+  background-color: var(--selectedSeats);
+}
+
+.seat.occupied{
+  background-color: var(--white);
+}
+
+.screen-container{
+  margin-bottom: 30px;
+  perspective: 500px;
+}
+
+.seat:not(.occupied):hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover{
+  cursor: default;
+  transform: scale(1);
+}
+
+.seat:nth-last-of-type(3){
+  margin-left: 1.5rem;
+}
+
+.seat:nth-of-type(3){
+  margin-left: 1.5rem;
+}
+
+.screen{
+  background-color: var(--white);
+  height: 8rem;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+}
+
+.row{
+  display: flex;
+}
+
+p{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+p span{
+  color: gold;
+}
+
+
+
+
